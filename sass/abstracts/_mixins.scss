@@ -1,0 +1,9 @@
+@mixin clearfix {
+    // We need to speicfy a content property for pseudo ele, otherwise it will not appear.
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+        
+    }
+}

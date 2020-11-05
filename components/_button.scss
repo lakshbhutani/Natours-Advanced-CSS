@@ -1,0 +1,59 @@
+.btn {
+    &:link, &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        border-radius: 10rem;
+        display: inline-block;  /* Always give this if you want to give some height and width to the element */
+    
+        /* Transition Property needs to be specified at initial state */
+        transition: all .2s;
+        position: relative;
+        font-size: 1.6rem;
+    }
+
+    &:active {
+        transform: translateY(-.1rem);
+        box-shadow: 0 .5rem 1rem rgba($color-black, .2);
+    }
+
+    &--white{
+        background-color: $color-white;
+        color: $color-grey-dark;
+
+        &::after {
+            background-color: $color-white;
+        }
+    }
+    
+    /* Width and Height is set to 100% because after is treated as a child of button and we want it to take the complete height and width */
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all 0.4s;
+    }
+
+    &--animated {
+        animation: moveInBottom 0.5s ease-out 0.75s;
+        /* Automatically apply the styles of 0% before the animation starts */
+        animation-fill-mode: backwards;
+    }
+
+    &:hover {
+        transform: translateY(-.3rem);
+        box-shadow: 0 1rem 2rem rgba($color-black, .2);
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+}
+

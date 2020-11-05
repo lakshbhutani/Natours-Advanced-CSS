@@ -1,0 +1,15 @@
+// Partial Sass file
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    /* 62.5% of browser font size */
+    // This defines what 1 rem is
+    font-size: 62.5%;
+}
+
